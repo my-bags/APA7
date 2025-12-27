@@ -3,38 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل التوثيق APA (الإصدار السابع) - الخدمة الاجتماعية</title>
+    <title>دليل APA 7 للخدمة الاجتماعية - إعداد أ.ياسر</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .tab-content { display: none; }
+        body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
         .tab-content.active { display: block; }
-        .tab-btn.active { 
-            border-bottom: 4px solid #1d4ed8; 
-            color: #1d4ed8;
-            font-weight: bold;
-        }
-        .example-card {
-            transition: transform 0.2s;
-        }
-        .example-card:hover {
-            transform: scale(1.01);
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .active-tab { background-color: #1e40af !important; color: white !important; shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .logic-box { border-right: 4px solid #3b82f6; background-color: #f8fafc; padding: 1.5rem; border-radius: 0.75rem; }
+        .reference-formula { font-family: 'Courier New', monospace; background: #f1f5f9; padding: 10px; border-radius: 5px; display: block; margin: 10px 0; border-left: 4px solid #94a3b8; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-900">
 
-    <!-- Header Section -->
-    <header class="bg-blue-900 text-white py-12 px-6 shadow-lg text-center">
-        <h1 class="text-3xl md:text-5xl font-bold mb-2">الدليل التفاعلي لتوثيق APA (7th Ed)</h1>
-        <!-- Added Reference Phrase -->
-        <p class="text-lg md:text-xl font-medium text-blue-200 mb-4 italic">إعداد أ. ياسر مدير مكتبة كلية الخدمة الاجتماعية جامعة الفيوم</p>
+    <!-- Hero Header -->
+    <header class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-16 px-6 shadow-2xl relative overflow-hidden text-center">
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">الدليل الشامل لتوثيق APA</h1>
+            <p class="text-xl md:text-2xl font-semibold text-blue-200 mb-2">إعداد أ. ياسر</p>
+            <p class="text-lg md:text-xl text-blue-100 mb-8 font-light">مدير مكتبة كلية الخدمة الاجتماعية - جامعة الفيوم</p>
+            
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-sm">الإصدار السابع (7th Edition)</span>
+                <span class="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-sm">مرجع باحثي الماجستير والدكتوراه</span>
+            </div>
+        </div>
+        <!-- Decorative Circle -->
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500 rounded-full opacity-10"></div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-10 -mt-10">
         
-        <p class="text-xl opacity-90">مخصص لباحثي الماجستير والدكتوراه في الخدمة الاجتماعية</p>
+        <!-- Quick Search -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-10 border border-blue-100">
+            <div class="flex items-center gap-4 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <h3 class="font-bold text-lg">البحث السريع في الدليل</h3>
+            </div>
+            <input type="text" id="searchInput" placeholder="ابحث عن (كتاب، موقع إلكتروني، فيديو، ورقة مؤتمر)..." 
+                class="w-full p-4 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all outline-none text-lg">
+        </div>
+
+        <!-- Professional Tabbed Navigation -->
+        <nav class="flex flex-wrap gap-2 mb-8 bg-white p-2 rounded-2xl shadow-sm border border-slate-200">
+            <button onclick="openTab(event, 'intro')" class="tab-btn active-tab flex-1 py-3 px-4 rounded-xl font-bold transition-all hover:bg-slate-100">مقدمة وقواعد</button>
+            <button onclick="openTab(event, 'intext')" class="tab-btn flex-1 py-3 px-4 rounded-xl font-bold transition-all hover:bg-slate-100">التوثيق بالمتن</button>
+            <button onclick="openTab(event, 'paper')" class="tab-btn flex-1 py-3 px-4 rounded-xl font-bold transition-all hover:bg-slate-100">المراجع الورقية</button>
+            <button onclick="openTab(event, 'online')" class="tab-btn flex-1 py-3 px-4 rounded-xl font-bold transition-all hover:bg-slate-100">المواقع والإنترنت</button>
+            <button onclick="openTab(event, 'special')" class="tab-btn flex-1 py-3 px-4 rounded-xl font-bold transition-all hover:bg-slate-100">حالات الخدمة الاجتماعية</button>
+        </nav>
+
+        <!-- Content Area -->
+        <div id="contentBox" class="min-h-[500px]">
+            
+            <!-- SECTION 1: INTRO -->
+            <div id="intro" class="tab-content active space-y-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-blue-600 rounded-full"></span>
+                        أهمية التوثيق بنظام APA في الإصدار السابع
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-lg leading-relaxed text-slate-600">
+                        <div class="space-y-4">
+                            <p>يعد نظام <strong>APA</strong> هو المعيار الذهبي في العلوم الاجتماعية. في الخدمة الاجتماعية تحديداً، تبرز أهميته لأننا نعتمد على <strong>"الممارسة المستندة إلى الأدلة" (Evidence-Based Practice)</strong>، مما يتطلب دقة شديدة في نسب الآراء والنظريات لأصحابها.</p>
+                            <p class="font-bold text-blue-700">التغييرات الجوهرية في الإصدار السابع:</p>
+                            <ul class="list-disc pr-6 space-y-2 text-sm">
+                                <li>إلغاء كتابة مدينة النشر (مثل: القاهرة، دار المعارف).</li>
+                                <li>اختصار التوثيق داخل المتن لثلاثة مؤلفين فأكثر بكلمة "وآخرون" من المرة الأولى.</li>
+                                <li>لم يعد مطلوباً كتابة "Retrieved from" (تم الاسترجاع من) للمواقع العادية.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                            <h4 class="font-bold text-blue-900 mb-3">القاعدة الذهبية للتوثيق:</h4>
+                            <p class="text-sm">يتكون أي مرجع من 4 عناصر أساسية تجيب على الأسئلة التالية:</p>
+                            <ol class="list-decimal pr-6 mt-2 space-y-1 font-medium">
+                                <li><strong>مَن؟</strong> (المؤلف أو المؤسسة)</li>
+                                <li><strong>متى؟</strong> (تاريخ النشر)</li>
+                                <li><strong>ماذا؟</strong> (عنوان العمل)</li>
+                                <li><strong>أين؟</strong> (المصدر: دار النشر، رابط الموقع، المجلة)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: IN-TEXT -->
+            <div id="intext" class="tab-content space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-8">قواعد الاقتباس والتوثيق داخل المتن</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Case 1 -->
+                        <div class="logic-box border-blue-500">
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">1. الفكرة المنقولة (غير المباشرة)</h4>
+                            <p class="text-sm mb-4">عندما تصيغ فكرة الباحث بأسلوبك الخاص.</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 italic">
+                                    "تعد الرعاية الاجتماعية حقاً أصيلاً (منصور، 2023)."
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 italic">
+                                    "أكد منصور (2023) أن الرعاية الاجتماعية..."
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case 2 -->
+                        <div class="logic-box border-orange-500">
+                            <h4 class="font-bold text-lg text-orange-800 mb-2">2. الاقتباس الحرفي (المباشر)</h4>
+                            <p class="text-sm mb-4">عندما تنقل النص كما هو (يجب ألا يزيد عن 40 كلمة).</p>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 italic text-center">
+                                "إن الخدمة الاجتماعية مهنة إنسانية" (كامل، 2022، ص. 45).
+                            </div>
+                        </div>
+
+                        <!-- Case 3 -->
+                        <div class="logic-box border-green-500">
+                            <h4 class="font-bold text-lg text-green-800 mb-2">3. توثيق المؤسسات (جهات حكومية)</h4>
+                            <p class="text-sm mb-4">شائع جداً في الخدمة الاجتماعية (وزارات، جمعيات).</p>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 italic">
+                                (وزارة التضامن الاجتماعي، 2021)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: PAPER REFERENCES -->
+            <div id="paper" class="tab-content space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-8">توثيق المراجع المطبوعة والورقية</h2>
+                    
+                    <div class="grid md:grid-cols-1 gap-8">
+                        <!-- Item -->
+                        <div class="group border-b pb-6">
+                            <h4 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">01</span>
+                                الكتب المترجمة (هام جداً)
+                            </h4>
+                            <code class="reference-formula">اللقب، الاسم. (السنة). عنوان الكتاب (ترجمة: اسم المترجم). دار النشر. (العمل الأصلي نشر في سنة)</code>
+                            <div class="bg-slate-50 p-4 rounded-xl relative mt-2 text-sm italic">
+                                سكيدمور، ريكس. (2018). <em>الإدارة في الخدمة الاجتماعية</em> (ترجمة: محمد رفعت). دار المسيرة. (العمل الأصلي نشر في 2010)
+                                <button onclick="copyCode(this)" class="absolute top-2 left-2 bg-blue-600 text-white px-3 py-1 rounded-md text-xs hover:bg-blue-700 transition-colors">نسخ</button>
+                            </div>
+                        </div>
+
+                        <!-- Item -->
+                        <div class="group border-b pb-6">
+                            <h4 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                <span class="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">02</span>
+                                الأبحاث في المجلات العلمية
+                            </h4>
+                            <code class="reference-formula">اللقب، الاسم. (السنة). عنوان البحث. اسم المجلة، المجلد (العدد)، الصفحات.</code>
+                            <div class="bg-slate-50 p-4 rounded-xl relative mt-2 text-sm italic">
+                                عبد المعطي، حسن. (2022). الاتجاهات الحديثة في تأهيل ذوي الإعاقة. <em>مجلة الخدمة الاجتماعية، 12</em>(3)، 200-230.
+                                <button onclick="copyCode(this)" class="absolute top-2 left-2 bg-blue-600 text-white px-3 py-1 rounded-md text-xs hover:bg-blue-700 transition-colors">نسخ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: ONLINE SOURCES (NEW) -->
+            <div id="online" class="tab-content space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-purple-100 rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-blue-900">توثيق المواقع الإلكترونية ومصادر الإنترنت</h2>
+                    </div>
+
+                    <p class="text-slate-600 mb-8 leading-relaxed">في الخدمة الاجتماعية، نحتاج دوماً لتوثيق <strong>قوانين جديدة</strong>، <strong>إحصائيات رسمية</strong> من مواقع الوزارات، أو <strong>أدلة عمل</strong> من منظمات دولية.</p>
+
+                    <div class="space-y-8">
+                        <!-- Sub Case 1 -->
+                        <div class="border-l-4 border-purple-500 pl-4 pr-4 py-2">
+                            <h4 class="font-bold text-purple-900 mb-2">أ- صفحة ويب لكاتب محدد</h4>
+                            <p class="text-xs text-slate-500 mb-2">القاعدة: اللقب، الاسم. (سنة، يوم شهر). <em>عنوان المقال</em>. اسم الموقع. الرابط</p>
+                            <div class="bg-purple-50 p-4 rounded-xl text-sm font-mono relative">
+                                منصور، أحمد. (2024، 15 يناير). <em>مستقبل العمل الاجتماعي الرقمي</em>. بوابة الأخصائيين. https://www.social-workers.com/digital-work
+                                <button onclick="copyCode(this)" class="absolute top-2 left-2 bg-purple-600 text-white px-3 py-1 rounded-md text-xs">نسخ</button>
+                            </div>
+                        </div>
+
+                        <!-- Sub Case 2 -->
+                        <div class="border-l-4 border-indigo-500 pl-4 pr-4 py-2">
+                            <h4 class="font-bold text-indigo-900 mb-2">ب- صفحة ويب لمؤسسة أو منظمة (الأكثر شيوعاً)</h4>
+                            <p class="text-xs text-slate-500 mb-2">القاعدة: اسم المنظمة. (السنة). <em>عنوان الصفحة أو التقرير</em>. الرابط</p>
+                            <div class="bg-indigo-50 p-4 rounded-xl text-sm font-mono relative">
+                                المركز القومي للبحوث الاجتماعية والجنائية. (2023). <em>إحصائيات ظاهرة التنمر في المدارس المصرية</em>. https://www.ncscr.org.eg/stats2023
+                                <button onclick="copyCode(this)" class="absolute top-2 left-2 bg-indigo-600 text-white px-3 py-1 rounded-md text-xs">نسخ</button>
+                            </div>
+                        </div>
+
+                        <!-- Sub Case 3 -->
+                        <div class="border-l-4 border-red-500 pl-4 pr-4 py-2">
+                            <h4 class="font-bold text-red-900 mb-2">ج- موقع إلكتروني بدون تاريخ (n.d.)</h4>
+                            <p class="text-xs text-slate-500 mb-2">القاعدة: تستخدم الرمز (د.ت) أو (n.d) اختصاراً لـ "بدون تاريخ".</p>
+                            <div class="bg-red-50 p-4 rounded-xl text-sm font-mono relative">
+                                الجمعية الدولية للأخصائيين الاجتماعيين. (د.ت). <em>ميثاق الأخلاقيات المهنية</em>. https://www.ifsw.org/ethics
+                                <button onclick="copyCode(this)" class="absolute top-2 left-2 bg-red-600 text-white px-3 py-1 rounded-md text-xs">نسخ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: SPECIAL SW CASES -->
+            <div id="special" class="tab-content space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-6 italic text-center">خدمة اجتماعية: حالات احترافية</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-900 text-white p-6 rounded-2xl">
+                            <h4 class="font-bold mb-3 border-b border-blue-700 pb-2">توثيق القانون أو التشريع</h4>
+                            <p class="text-sm opacity-80 mb-4">يعتمد باحثو الخدمة الاجتماعية على قوانين مثل قانون ذوي الإعاقة أو قانون الجمعيات.</p>
+                            <code class="text-xs bg-black/30 p-2 block rounded mb-2 leading-relaxed">اسم القانون، رقم القانون، السنة. (سنة النشر). الجريدة الرسمية.</code>
+                            <p class="text-xs italic bg-white/10 p-2 rounded">قانون حقوق الأشخاص ذوي الإعاقة، رقم 10 لعام 2018. (2018). الوقائع المصرية.</p>
+                        </div>
+
+                        <div class="bg-emerald-900 text-white p-6 rounded-2xl">
+                            <h4 class="font-bold mb-3 border-b border-emerald-700 pb-2">توثيق الندوات العلمية</h4>
+                            <p class="text-sm opacity-80 mb-4">توثيق ورقة بحثية ألقيت في مؤتمر كلية الخدمة الاجتماعية.</p>
+                            <code class="text-xs bg-black/30 p-2 block rounded mb-2 leading-relaxed">اللقب، الاسم. (السنة، شهر). عنوان الورقة [بحث مقدم]. اسم المؤتمر، الجهة المنظمة، المدينة.</code>
+                            <p class="text-xs italic bg-white/10 p-2 rounded">منصور، ياسر. (2023، مايو). دور التكنولوجيا في الخدمة الاجتماعية [ورقة عمل]. المؤتمر العلمي الـ 30، كلية الخدمة الاجتماعية - جامعة الفيوم.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12 px-6 mt-20 border-t-8 border-blue-600">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+            <div class="space-y-4">
+                <h4 class="text-2xl font-bold">دليل APA التفاعلي</h4>
+                <p class="text-slate-400 text-sm">أداة تعليمية تهدف لتسهيل عملية التوثيق العلمي لطلاب الدراسات العليا في كليات الخدمة الاجتماعية بالوطن العربي.</p>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-xl font-bold">عن المعدّ</h4>
+                <p class="text-blue-400 font-bold">أ. ياسر</p>
+                <p class="text-slate-400 text-sm">مدير مكتبة كلية الخدمة الاجتماعية<br>جامعة الفيوم - جمهورية مصر العربية</p>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-xl font-bold">روابط سريعة</h4>
+                <ul class="text-slate-400 text-sm space-y-2">
+                    <li>• موقع جامعة الفيوم</li>
+                    <li>• المجلس الأعلى للجامعات</li>
+                    <li>• بنك المعرفة المصري (EKB)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-slate-800 text-slate-500 text-xs italic">
+            تم تطوير هذا الدليل لخدمة الأمانة العلمية وبناء كوادر بحثية متميزة
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabId) {
+            // Hide all
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
+            
+            // Show current
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active-tab');
+            
+            // Scroll to top of content for mobile
+            if(window.innerWidth < 768) {
+                document.getElementById('contentBox').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Search Engine
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            const contents = document.querySelectorAll('.group, .logic-box, .border-l-4');
+            
+            contents.forEa        <p class="text-xl opacity-90">مخصص لباحثي الماجستير والدكتوراه في الخدمة الاجتماعية</p>
         <div class="mt-8 flex justify-center gap-4">
             <span class="bg-blue-700 px-4 py-2 rounded-full text-sm">الإصدار السابع</span>
             <span class="bg-blue-700 px-4 py-2 rounded-full text-sm">تخصص الخدمة الاجتماعية</span>
