@@ -11,18 +11,18 @@
         .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .active-tab { background-color: #1e40af !important; color: white !important; box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.3); }
+        .active-tab { background-color: #1e40af !important; color: white !important; shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
         .logic-box { border-right: 4px solid #3b82f6; background-color: #f8fafc; padding: 1.5rem; border-radius: 0.75rem; }
-        .reference-formula { font-family: 'Courier New', monospace; background: #f1f5f9; padding: 12px; border-radius: 8px; display: block; margin: 10px 0; border-left: 4px solid #94a3b8; font-size: 0.9rem; }
+        .reference-formula { font-family: 'Courier New', monospace; background: #f1f5f9; padding: 10px; border-radius: 5px; display: block; margin: 10px 0; border-left: 4px solid #94a3b8; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
     <!-- Hero Header -->
-    <header class="bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white py-20 px-6 shadow-2xl relative overflow-hidden text-center">
+    <header class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-16 px-6 shadow-2xl relative overflow-hidden text-center">
         <div class="relative z-10 max-w-4xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">الدليل الشامل لتوثيق APA</h1>
-            <p class="text-xl md:text-2xl font-semibold text-blue-300 mb-2">إعداد أ. ياسر</p>
+            <p class="text-xl md:text-2xl font-semibold text-blue-200 mb-2">إعداد أ. ياسر</p>
             <p class="text-lg md:text-xl text-blue-100 mb-8 font-light">مدير مكتبة كلية الخدمة الاجتماعية - جامعة الفيوم</p>
             
             <div class="flex flex-wrap justify-center gap-3">
@@ -30,263 +30,9 @@
                 <span class="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-sm">مرجع باحثي الماجستير والدكتوراه</span>
             </div>
         </div>
-        <!-- Decorative Elements -->
-        <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-500 rounded-full opacity-10"></div>
-        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-500 rounded-full opacity-10"></div>
+        <!-- Decorative Circle -->
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500 rounded-full opacity-10"></div>
     </header>
-
-    <main class="max-w-6xl mx-auto p-4 md:p-10 -mt-12">
-        
-        <!-- Professional Tabbed Navigation -->
-        <nav class="flex flex-wrap gap-2 mb-10 bg-white p-3 rounded-2xl shadow-xl border border-slate-200">
-            <button onclick="openTab(event, 'intro')" class="tab-btn active-tab flex-1 py-4 px-4 rounded-xl font-bold transition-all hover:bg-slate-50">الأساسيات والقواعد</button>
-            <button onclick="openTab(event, 'intext')" class="tab-btn flex-1 py-4 px-4 rounded-xl font-bold transition-all hover:bg-slate-50">التوثيق بالمتن</button>
-            <button onclick="openTab(event, 'paper')" class="tab-btn flex-1 py-4 px-4 rounded-xl font-bold transition-all hover:bg-slate-50">المراجع الورقية</button>
-            <button onclick="openTab(event, 'online')" class="tab-btn flex-1 py-4 px-4 rounded-xl font-bold transition-all hover:bg-slate-50">المواقع والإنترنت</button>
-            <button onclick="openTab(event, 'special')" class="tab-btn flex-1 py-4 px-4 rounded-xl font-bold transition-all hover:bg-slate-50">حالات الخدمة الاجتماعية</button>
-        </nav>
-
-        <!-- Content Area -->
-        <div id="contentBox" class="min-h-[600px]">
-            
-            <!-- SECTION 1: INTRO -->
-            <div id="intro" class="tab-content active space-y-8">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                    <h2 class="text-3xl font-bold text-blue-900 mb-8 flex items-center gap-3">
-                        <span class="w-2 h-10 bg-blue-600 rounded-full"></span>
-                        دليل الباحث في الممارسة الاجتماعية
-                    </h2>
-                    <div class="grid md:grid-cols-2 gap-10 text-lg leading-relaxed text-slate-700">
-                        <div class="space-y-6">
-                            <p>يعتبر نظام <strong>APA (الجمعية الأمريكية لعلم النفس)</strong> المعيار الأكثر دقة ومصداقية في توثيق أبحاث الخدمة الاجتماعية عالمياً. الإصدار السابع جاء ليبسط العملية على الباحثين ويواكب العصر الرقمي.</p>
-                            
-                            <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
-                                <h4 class="font-bold text-blue-900 mb-4 flex items-center gap-2">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11H9v2H7v2h2v2h2v-2h2v-2h-2V7z"/></svg>
-                                    تحديثات جوهرية للباحث:
-                                </h4>
-                                <ul class="list-disc pr-6 space-y-3 text-sm">
-                                    <li><strong>تجاوز المكان:</strong> لم يعد مطلوباً ذكر مدينة النشر للكتب.</li>
-                                    <li><strong>تسهيل المتن:</strong> لثلاثة مؤلفين فأكثر، نستخدم "وآخرون" منذ المرة الأولى للاستشهاد.</li>
-                                    <li><strong>الروابط الرقمية:</strong> كتابة الروابط (URLs) كما هي، دون الحاجة لعبارة "تم الاسترجاع من".</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="space-y-6">
-                            <h4 class="font-bold text-xl text-slate-900">هيكل المرجع النموذجي:</h4>
-                            <p class="text-sm">لإعداد قائمة مراجع دقيقة، يجب توفر أربعة أعمدة أساسية لكل مصدر:</p>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
-                                    <span class="block text-blue-600 font-bold text-xl">01</span>
-                                    <span class="text-sm font-bold">المؤلف</span>
-                                    <p class="text-xs text-slate-500">من أعد العمل؟</p>
-                                </div>
-                                <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
-                                    <span class="block text-blue-600 font-bold text-xl">02</span>
-                                    <span class="text-sm font-bold">التاريخ</span>
-                                    <p class="text-xs text-slate-500">متى نُشر العمل؟</p>
-                                </div>
-                                <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
-                                    <span class="block text-blue-600 font-bold text-xl">03</span>
-                                    <span class="text-sm font-bold">العنوان</span>
-                                    <p class="text-xs text-slate-500">ما اسم العمل؟</p>
-                                </div>
-                                <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
-                                    <span class="block text-blue-600 font-bold text-xl">04</span>
-                                    <span class="text-sm font-bold">المصدر</span>
-                                    <p class="text-xs text-slate-500">أين يمكن الوصول إليه؟</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECTION 2: IN-TEXT -->
-            <div id="intext" class="tab-content space-y-6">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                    <h2 class="text-2xl font-bold text-blue-900 mb-8">التوثيق داخل فقرات البحث (المتن)</h2>
-                    
-                    <div class="space-y-8">
-                        <div class="logic-box border-blue-500">
-                            <h4 class="font-bold text-lg text-blue-800 mb-4">أ- الاستشهاد السردي (Narrative)</h4>
-                            <p class="text-sm mb-4 text-slate-600 italic">يكون اسم الباحث جزءاً من الجملة.</p>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200">
-                                أوضح <strong>منصور (2023)</strong> أن الممارسة المهنية تتطلب مهارات تواصل...
-                            </div>
-                        </div>
-
-                        <div class="logic-box border-slate-500">
-                            <h4 class="font-bold text-lg text-slate-800 mb-4">ب- الاستشهاد بين قوسين (Parenthetical)</h4>
-                            <p class="text-sm mb-4 text-slate-600 italic">توضع المعلومات في نهاية الفكرة.</p>
-                            <div class="bg-white p-4 rounded-xl border border-slate-200">
-                                تعتبر الخدمة الاجتماعية المدرسية ركيزة أساسية في العملية التعليمية <strong>(كامل، 2022)</strong>.
-                            </div>
-                        </div>
-
-                        <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
-                            <h4 class="font-bold text-red-800 mb-2">تنبيه لمؤلفين متعددين:</h4>
-                            <p class="text-sm leading-relaxed text-red-900">
-                                إذا كان المرجع لثلاثة مؤلفين أو أكثر، استخدم اسم الأول متبوعاً بـ <strong>(وآخرون، 2024)</strong> في كل مرة تستشهد فيها بالمرجع، ولا تسرد جميع الأسماء في المتن أبداً.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECTION 3: PAPER -->
-            <div id="paper" class="tab-content space-y-6">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                    <h2 class="text-2xl font-bold text-blue-900 mb-8">توثيق المراجع المطبوعة (الكتب والدوريات)</h2>
-                    
-                    <div class="space-y-10">
-                        <div class="relative">
-                            <h4 class="text-lg font-bold text-slate-800 mb-2">1. الكتاب المترجم</h4>
-                            <code class="reference-formula">اللقب، الاسم. (السنة). عنوان الكتاب (ترجمة: اسم المترجم). دار النشر. (العمل الأصلي نشر في سنة)</code>
-                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 relative">
-                                سكيدمور، ريكس. (2018). <em>الإدارة في الخدمة الاجتماعية</em> (ترجمة: محمد رفعت). دار المسيرة. (العمل الأصلي نشر في 2010)
-                                <button onclick="copyCode(this)" class="absolute top-2 left-2 bg-blue-600 text-white px-3 py-1 rounded-md text-xs">نسخ</button>
-                            </div>
-                        </div>
-
-                        <div class="relative">
-                            <h4 class="text-lg font-bold text-slate-800 mb-2">2. بحث في مجلة علمية</h4>
-                            <code class="reference-formula">اللقب، الاسم. (السنة). عنوان البحث. اسم المجلة، المجلد (العدد)، الصفحات.</code>
-                            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 relative">
-                                حسني، سحر. (2022). تقييم برامج الحماية الاجتماعية. <em>مجلة دراسات الخدمة الاجتماعية، 15</em>(4)، 100-125.
-                                <button onclick="copyCode(this)" class="absolute top-2 left-2 bg-blue-600 text-white px-3 py-1 rounded-md text-xs">نسخ</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECTION 4: ONLINE -->
-            <div id="online" class="tab-content space-y-6">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                    <h2 class="text-2xl font-bold text-blue-900 mb-8">توثيق مواقع الإنترنت والمصادر الرقمية</h2>
-                    <p class="text-slate-600 mb-6">في أبحاثنا الاجتماعية، غالباً ما نعود لمواقع وزارات أو هيئات دولية لرصد البيانات والتشريعات.</p>
-
-                    <div class="grid gap-8">
-                        <div class="p-6 bg-purple-50 rounded-2xl border border-purple-100">
-                            <h4 class="font-bold text-purple-950 mb-3">أ- مقال من موقع إلكتروني (بمؤلف)</h4>
-                            <code class="reference-formula">اللقب، الاسم. (سنة، يوم شهر). عنوان المقال. اسم الموقع. الرابط</code>
-                            <p class="text-sm italic mt-2">القحطاني، ناصر. (2023، 12 ديسمبر). التحول الرقمي في مكاتب التوجيه الاستشاري. بوابة الخدمة الاجتماعية. https://www.sw-portal.com/digital</p>
-                        </div>
-
-                        <div class="p-6 bg-indigo-50 rounded-2xl border border-indigo-100">
-                            <h4 class="font-bold text-indigo-950 mb-3">ب- تقرير من موقع مؤسسة (بدون مؤلف محدد)</h4>
-                            <code class="reference-formula">اسم المؤسسة. (السنة). عنوان التقرير أو الصفحة. الرابط</code>
-                            <p class="text-sm italic mt-2">وزارة التضامن الاجتماعي. (2024). <em>دليل خدمات الأشخاص ذوي الإعاقة</em>. https://www.moss.gov.eg/disability-guide</p>
-                        </div>
-
-                        <div class="p-6 bg-amber-50 rounded-2xl border border-amber-100">
-                            <h4 class="font-bold text-amber-950 mb-3">ج- معلومة من موقع بدون تاريخ (n.d.)</h4>
-                            <p class="text-xs mb-3">نستخدم الرمز (د.ت) اختصاراً لـ "بدون تاريخ" للتعامل مع الصفحات التعريفية.</p>
-                            <p class="text-sm italic">منظمة اليونيسف. (د.ت). <em>حقوق الطفل في الرعاية الأسرية</em>. https://www.unicef.org/rights</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECTION 5: SPECIAL -->
-            <div id="special" class="tab-content space-y-6">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                    <h2 class="text-2xl font-bold text-blue-900 mb-8 text-center">حالات خاصة بطلاب الدراسات العليا في الخدمة الاجتماعية</h2>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-blue-900 text-white p-6 rounded-2xl">
-                            <h4 class="font-bold mb-4 flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-                                توثيق القوانين (التشريعات)
-                            </h4>
-                            <p class="text-xs opacity-80 mb-4 font-mono">اسم القانون، رقم القانون، السنة. (سنة النشر). الجريدة الرسمية.</p>
-                            <div class="bg-white/10 p-3 rounded text-sm italic">
-                                قانون التأمينات الاجتماعية والمعاشات، رقم 148 لعام 2019. (2019). الجريدة الرسمية.
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-800 text-white p-6 rounded-2xl">
-                            <h4 class="font-bold mb-4 flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                                رسالة ماجستير/دكتوراه
-                            </h4>
-                            <p class="text-xs opacity-80 mb-4 font-mono">اللقب، الاسم. (السنة). عنوان الرسالة [رسالة ماجستير/دكتوراه، اسم الجامعة].</p>
-                            <div class="bg-white/10 p-3 rounded text-sm italic">
-                                عبد الله، منى. (2023). <em>دور الممارس العام في تمكين المرأة الريفية</em> [رسالة ماجستير، جامعة الفيوم].
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 bg-yellow-50 border-r-4 border-yellow-500 p-6 rounded-xl">
-                        <h4 class="font-bold text-yellow-800 mb-2 underline">ملاحظة هامة حول الترتيب:</h4>
-                        <p class="text-sm text-yellow-900 leading-relaxed text-justify">
-                            يجب ترتيب قائمة المراجع النهائية <strong>هجائياً</strong> بناءً على لقب المؤلف. ابدأ بالمراجع العربية كاملة مرتبة من (أ) إلى (ي)، ثم تليها المراجع الأجنبية مرتبة من (A) إلى (Z). لا تقم بترقيم المراجع (1، 2، 3) بل استخدم نظام "الإزاحة السطرية المعلقة" لكل مرجع.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="bg-slate-950 text-white py-14 px-6 mt-20 border-t-4 border-blue-600">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-            <div class="max-w-md">
-                <h4 class="text-2xl font-bold mb-4">دليل APA للخدمة الاجتماعية</h4>
-                <p class="text-slate-400 text-sm leading-relaxed">بوابة تعليمية مخصصة لمساندة الباحث العربي في توثيق نتاجه العلمي بدقة واحترافية وفق أحدث المعايير الدولية.</p>
-            </div>
-            <div>
-                <h4 class="text-xl font-bold mb-4">إعداد</h4>
-                <p class="text-blue-400 font-bold mb-1">أ. ياسر</p>
-                <p class="text-slate-400 text-sm">مدير مكتبة كلية الخدمة الاجتماعية<br>جامعة الفيوم</p>
-            </div>
-            <div class="text-slate-500 text-xs italic space-y-2">
-                <p>تم التصميم ليلائم أجهزة الحاسب والهواتف الذكية.</p>
-                <p>© 2024 - مكتبة كلية الخدمة الاجتماعية - جامعة الفيوم</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function openTab(evt, tabId) {
-            // Hide all tab contents
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active-tab'));
-
-            // Show current tab and add active class to button
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active-tab');
-
-            // Scroll adjustment for better mobile experience
-            if (window.innerWidth < 768) {
-                document.getElementById('contentBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // Copy Function with feedback
-        function copyCode(btn) {
-            const textToCopy = btn.parentElement.innerText.replace('نسخ', '').trim();
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                const originalText = btn.innerText;
-                btn.innerText = "تم النسخ ✓";
-                btn.classList.replace('bg-blue-600', 'bg-green-600');
-                
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.classList.replace('bg-green-600', 'bg-blue-600');
-                }, 2000);
-            }).catch(err => {
-                console.error('فشل في النسخ: ', err);
-            });
-        }
-    </script>
-</body>
-</html>
 
     <main class="max-w-6xl mx-auto p-4 md:p-10 -mt-10">
         
@@ -541,240 +287,30 @@
             const term = e.target.value.toLowerCase();
             const contents = document.querySelectorAll('.group, .logic-box, .border-l-4');
             
-            contents.forEa        <p class="text-xl opacity-90">مخصص لباحثي الماجستير والدكتوراه في الخدمة الاجتماعية</p>
-        <div class="mt-8 flex justify-center gap-4">
-            <span class="bg-blue-700 px-4 py-2 rounded-full text-sm">الإصدار السابع</span>
-            <span class="bg-blue-700 px-4 py-2 rounded-full text-sm">تخصص الخدمة الاجتماعية</span>
-            <span class="bg-blue-700 px-4 py-2 rounded-full text-sm">دليل تفاعلي</span>
-        </div>
-    </header>
-
-    <main class="max-w-6xl mx-auto p-4 md:p-8">
-        
-        <!-- Search Bar -->
-        <div class="mb-10">
-            <input type="text" id="searchInput" placeholder="ابحث عن طريقة توثيق (مثلاً: كتاب، رسالة، تقرير)..." 
-                class="w-full p-4 rounded-xl border-2 border-blue-200 shadow-sm focus:border-blue-500 focus:outline-none text-lg">
-        </div>
-
-        <!-- Navigation Tabs -->
-        <div class="flex flex-wrap border-b border-gray-200 mb-8 sticky top-0 bg-gray-50 z-10">
-            <button onclick="openTab('basics')" class="tab-btn active px-6 py-4 text-lg">الأساسيات</button>
-            <button onclick="openTab('intext')" class="tab-btn px-6 py-4 text-lg">التوثيق في المتن</button>
-            <button onclick="openTab('references')" class="tab-btn px-6 py-4 text-lg">قائمة المراجع</button>
-            <button onclick="openTab('sw-special')" class="tab-btn px-6 py-4 text-lg">حالات خاصة بالخدمة الاجتماعية</button>
-        </div>
-
-        <!-- Tab 1: Basics -->
-        <div id="basics" class="tab-content active space-y-6">
-            <div class="bg-white p-6 rounded-2xl shadow-md">
-                <h2 class="text-2xl font-bold text-blue-800 mb-4 border-r-4 border-blue-800 pr-3">لماذا التوثيق مهم في الخدمة الاجتماعية؟</h2>
-                <p class="leading-relaxed text-lg mb-4">
-                    في أبحاث الخدمة الاجتماعية، نتعامل مع سياسات اجتماعية، نظريات تدخل مهني، وبيانات إحصائية حساسة. التوثيق الدقيق يضمن:
-                </p>
-                <ul class="list-disc pr-6 space-y-2 text-lg">
-                    <li>الأمانة العلمية وحماية حقوق الملكية الفكرية.</li>
-                    <li>تمكين الباحثين الآخرين من العودة للمصادر الأصلية للدراسات والتقارير.</li>
-                    <li>دعم الحجج العلمية بآراء خبراء الممارسة الاجتماعية.</li>
-                </ul>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
-                    <h3 class="font-bold text-xl text-blue-900 mb-3 text-center">التوثيق في المتن (Citations)</h3>
-                    <p>يتم داخل فقرات الرسالة، ويشير باختصار إلى (المؤلف، السنة).</p>
-                </div>
-                <div class="bg-green-50 p-6 rounded-2xl border border-green-100 text-center">
-                    <h3 class="font-bold text-xl text-green-900 mb-3">قائمة المراجع (References)</h3>
-                    <p>تكون في نهاية البحث وتتضمن التفاصيل الكاملة للمصدر.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab 2: In-text Citations -->
-        <div id="intext" class="tab-content space-y-6">
-            <div class="bg-white p-6 rounded-2xl shadow-md">
-                <h2 class="text-2xl font-bold text-blue-800 mb-6">قواعد التوثيق داخل المتن</h2>
-                
-                <div class="space-y-4">
-                    <!-- Author Cases -->
-                    <div class="example-card border-r-4 border-orange-400 bg-orange-50 p-4 rounded-lg">
-                        <h3 class="font-bold mb-2">مؤلف واحد</h3>
-                        <p class="text-sm text-gray-600 mb-2">القاعدة: (اللقب، السنة)</p>
-                        <div class="bg-white p-3 rounded border border-orange-200">
-                            أشار (منصور، 2023) إلى أهمية الممارسة الإكلينيكية... <br>
-                            إن الخدمة الاجتماعية المدرسية تعتمد على... (منصور، 2023).
-                        </div>
-                    </div>
-
-                    <div class="example-card border-r-4 border-blue-400 bg-blue-50 p-4 rounded-lg">
-                        <h3 class="font-bold mb-2">مؤلفان</h3>
-                        <p class="text-sm text-gray-600 mb-2">القاعدة: (اللقب واللقب، السنة)</p>
-                        <div class="bg-white p-3 rounded border border-blue-200">
-                            أكد (كامل والقحطاني، 2022) على دور السياسة الاجتماعية... <br>
-                            تتعدد أدوار الممارس العام في... (كامل والقحطاني، 2022).
-                        </div>
-                    </div>
-
-                    <div class="example-card border-r-4 border-green-400 bg-green-50 p-4 rounded-lg">
-                        <h3 class="font-bold mb-2">3 مؤلفين فأكثر (جديد الإصدار السابع)</h3>
-                        <p class="text-sm text-gray-600 mb-2">القاعدة: (اللقب وآخرون، السنة) - من المرة الأولى</p>
-                        <div class="bg-white p-3 rounded border border-green-200">
-                            أوضحت دراسة (العتيبي وآخرون، 2021) فاعلية البرامج...
-                        </div>
-                    </div>
-
-                    <div class="example-card border-r-4 border-purple-400 bg-purple-50 p-4 rounded-lg">
-                        <h3 class="font-bold mb-2">التوثيق المباشر (اقتباس حرفي)</h3>
-                        <p class="text-sm text-gray-600 mb-2">القاعدة: إضافة رقم الصفحة (ص. الرقم)</p>
-                        <div class="bg-white p-3 rounded border border-purple-200">
-                            "تعتبر الخدمة الاجتماعية مهنة إنسانية" (عبد العزيز، 2020، ص. 45).
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab 3: Reference List -->
-        <div id="references" class="tab-content space-y-6">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">نماذج قائمة المراجع</h2>
-            
-            <!-- Book Example -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-blue-600">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="font-bold text-xl text-blue-700">1. الكتب المطبوعة</h3>
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm">مثال تطبيقي</span>
-                </div>
-                <p class="mb-2 text-gray-700"><strong>القاعدة:</strong> اللقب، الاسم. (السنة). <em>عنوان الكتاب بخط مائل</em>. دار النشر.</p>
-                <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm relative">
-                    الفقي، إبراهيم. (2019). <em>الممارسة المهنية في الخدمة الاجتماعية</em>. دار المعارف.
-                    <button onclick="copyToClipboard(this)" class="absolute top-2 left-2 text-blue-600 hover:text-blue-800 text-xs bg-white px-2 py-1 rounded shadow">نسخ</button>
-                </div>
-            </div>
-
-            <!-- Journal Example -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-green-600">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="font-bold text-xl text-green-700">2. الأبحاث في المجلات العلمية</h3>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded text-sm">مثال تطبيقي</span>
-                </div>
-                <p class="mb-2 text-gray-700"><strong>القاعدة:</strong> اللقب، الاسم. (السنة). عنوان البحث. <em>اسم المجلة بخط مائل، المجلد</em>(العدد)، الصفحات. DOI أو URL</p>
-                <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm relative">
-                    حسني، سحر. (2022). الاتجاهات الحديثة في خدمة الفرد. <em>مجلة دراسات الخدمة الاجتماعية، 15</em>(2)، 120-145.
-                    <button onclick="copyToClipboard(this)" class="absolute top-2 left-2 text-blue-600 hover:text-blue-800 text-xs bg-white px-2 py-1 rounded shadow">نسخ</button>
-                </div>
-            </div>
-
-            <!-- Thesis Example -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-red-600">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="font-bold text-xl text-red-700">3. الرسائل الجامعية (ماجستير/دكتوراه)</h3>
-                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded text-sm">مثال تطبيقي</span>
-                </div>
-                <p class="mb-2 text-gray-700"><strong>القاعدة:</strong> اللقب، الاسم. (السنة). <em>عنوان الرسالة</em> [رسالة ماجستير/دكتوراه، اسم الجامعة].</p>
-                <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm relative">
-                    سليمان، أحمد. (2021). <em>فاعلية التدخل المهني في مواجهة التنمر المدرسي</em> [رسالة دكتوراه غير منشورة، جامعة حلوان].
-                    <button onclick="copyToClipboard(this)" class="absolute top-2 left-2 text-blue-600 hover:text-blue-800 text-xs bg-white px-2 py-1 rounded shadow">نسخ</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab 4: Social Work Specials -->
-        <div id="sw-special" class="tab-content space-y-6">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4 text-center">حالات خاصة بباحثي الخدمة الاجتماعية</h2>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Government Reports -->
-                <div class="bg-white p-6 rounded-2xl shadow-md border-r-8 border-yellow-500">
-                    <h3 class="font-bold text-xl mb-3">تقارير الوزارات والهيئات الحكومية</h3>
-                    <p class="text-sm mb-4">مثال: تقارير وزارة التضامن الاجتماعي أو العمل.</p>
-                    <div class="bg-yellow-50 p-4 rounded-lg text-sm italic">
-                        وزارة التضامن الاجتماعي. (2023). <em>التقرير السنوي لمؤشرات الحماية الاجتماعية في مصر</em>. https://www.moss.gov.eg/report2023
-                    </div>
-                </div>
-
-                <!-- NGO Reports -->
-                <div class="bg-white p-6 rounded-2xl shadow-md border-r-8 border-indigo-500">
-                    <h3 class="font-bold text-xl mb-3">تقارير الجمعيات الأهلية (NGOs)</h3>
-                    <p class="text-sm mb-4">عند استخدام بيانات من جمعية خيرية أو مؤسسة دولية.</p>
-                    <div class="bg-indigo-50 p-4 rounded-lg text-sm italic">
-                        منظمة الصحة العالمية. (2022). <em>الصحة النفسية للمسنين في المنطقة العربية</em>.
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-red-50 p-6 rounded-2xl border-2 border-dashed border-red-300 mt-8">
-                <h3 class="font-bold text-red-800 text-xl mb-2">⚠️ تنبيهات هامة للباحثين:</h3>
-                <ul class="list-disc pr-6 space-y-2">
-                    <li>في الإصدار السابع، لا يتم كتابة "تم الاسترجاع من" (Retrieved from) إلا إذا كان المحتوى يتغير باستمرار.</li>
-                    <li>لا يكتب مكان النشر (المدينة/الدولة) في المراجع الخاصة بالكتب.</li>
-                    <li>تأكد من ترتيب قائمة المراجع هجائياً (أ، ب، ت...) للمراجع العربية، ثم هجائياً (A, B, C...) للمراجع الأجنبية.</li>
-                </ul>
-            </div>
-        </div>
-
-    </main>
-
-    <footer class="bg-gray-800 text-white py-10 px-6 mt-12">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <p class="text-xl font-bold">دليل APA التفاعلي</p>
-                <p class="text-gray-400">إعداد أ. ياسر - مكتبة كلية الخدمة الاجتماعية - جامعة الفيوم</p>
-            </div>
-            <div class="text-center md:text-left">
-                <p class="text-sm text-gray-400">© ٢٠٢٥ - جميع الحقوق محفوظة للباحثين</p>
-                <p class="text-xs text-gray-500 mt-2 italic">نظام التوثيق APA الإصدار السابع هو المعيار المعتمد عالمياً</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Logic -->
-    <script>
-        function openTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-            const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => 
-                btn.getAttribute('onclick').includes(tabId)
-            );
-            if (activeBtn) activeBtn.classList.add('active');
-        }
-
-        document.getElementById('searchInput').addEventListener('keyup', function(e) {
-            let term = e.target.value.toLowerCase();
-            let cards = document.querySelectorAll('.bg-white, .example-card');
-            
-            cards.forEach(card => {
-                let text = card.innerText.toLowerCase();
-                if(text.includes(term)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
+            contents.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                item.style.display = text.includes(term) ? "block" : "none";
             });
         });
 
-        function copyToClipboard(btn) {
-            const text = btn.parentElement.innerText.replace('نسخ', '').trim();
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            
-            const originalText = btn.innerText;
-            btn.innerText = "تم النسخ!";
-            btn.classList.add('bg-green-500', 'text-white');
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.classList.remove('bg-green-500', 'text-white');
-            }, 2000);
+        // Copy Function
+        function copyCode(btn) {
+            const textToCopy = btn.parentElement.innerText.replace('نسخ', '').trim();
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "تم النسخ!";
+                btn.classList.replace('bg-blue-600', 'bg-green-600');
+                btn.classList.replace('bg-purple-600', 'bg-green-600');
+                btn.classList.replace('bg-indigo-600', 'bg-green-600');
+                btn.classList.replace('bg-red-600', 'bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-green-600');
+                }, 2000);
+            });
         }
     </script>
 </body>
 </html>
+
